@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+<body>
+    <div id="app">
+        <p>{{total}}</p>
+        <button @click="incrementar">incrementar</button>
+        <button @click="diminuir">Diminuir</button>
+        <p>{{instrumento}}</p>
+        <button @click="mudarNome('Violão')">Violão</button>
+        <button @click="mudarNome('Guitarra')">Guitarra</button>
+
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                total: 0,
+                instrumento: ""
+            },
+            methods: {
+                incrementar() {
+                    this.total++
+                },
+                diminuir() {
+                    this.total--;
+                },
+                mudarNome(instrumento) {
+                    this.instrumento = instrumento;
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

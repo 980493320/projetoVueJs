@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template e Diretivas</title>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <p>{{conteudo}}</p>
+        <p>{{lado * lado - lado /100}}</p>
+        <p>{{comprou ? 'Sim ele comprou' : 'Não comprou, compre aqui'}}</p>
+        <a v-bind:href="href">{{href}}</a>
+
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                titulo: "Vue.js Completo",
+                conteudo: "Este é o curso de Vue.js",
+                lado: 5,
+                comprou: false,
+                href: "https://www.google.com"
+
+
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeCycle</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+<body>
+    <div id="app">
+
+        <ul>
+            <li v-for="(valor, chave) in github">{{chave}}: {{valor}}</li>
+        </ul>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                github: {}
+            },
+            methods: {
+                puxarGithub() {
+                    fetch("https://viacep.com.br/ws/66025660/json/")
+                        .then(r => r.json())
+                        .then((resposta) => {
+                            this.github = resposta
+                        })
+                }
+            }
+        })
+    </script>
+
+
+
+
+</body>
+
+</html>

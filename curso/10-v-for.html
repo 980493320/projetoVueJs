@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-for</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(curso, index) in cursos">{{curso}} {{index}}</li>
+        </ul>
+        <button @click="removerItem">Remover</button>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                cursos: ["HTML", "CSS", "PHP", "JAVA"]
+            },
+            methods: {
+                removerItem() {
+                    this.cursos.pop()
+                }
+            },
+        })
+    </script>
+
+
+</body>
+
+</html>
